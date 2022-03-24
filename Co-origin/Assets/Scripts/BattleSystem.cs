@@ -15,8 +15,8 @@ public class BattleSystem : MonoBehaviour
     public Transform playerBattleStation;
     public Transform enemyBattleStation;
 
-    public BattleHUD playerHUD;
-    public BattleHUD enemyHUD;
+    BattleHUD playerHUD;
+    BattleHUD enemyHUD;
 
     Unit playerUnit;
     Unit enemyUnit;
@@ -33,8 +33,10 @@ public class BattleSystem : MonoBehaviour
     {
         GameObject playerGO = Instantiate(playerPrefab, playerBattleStation);
         playerUnit = playerGO.GetComponent<Unit>();
+        playerHUD = playerGO.GetComponent<BattleHUD>();
         GameObject enemyGO = Instantiate(enemyPrefab, enemyBattleStation);
         enemyUnit = enemyGO.GetComponent<Unit>();
+        enemyHUD = enemyGO.GetComponent<BattleHUD>();
 
         playerHUD.setHUD(playerUnit);
         enemyHUD.setHUD(enemyUnit);
@@ -78,7 +80,7 @@ public class BattleSystem : MonoBehaviour
     }
     IEnumerator EnemyTurn()
     {
-        dialogText.text = enemyUnit.name + "attacks!";
+        dialogText.text = enemyUnit.unitName + "attacks!";
 
         yield return new WaitForSeconds(1f);
         bool isDead = playerUnit.TakeDamage(enemyUnit.damage);
