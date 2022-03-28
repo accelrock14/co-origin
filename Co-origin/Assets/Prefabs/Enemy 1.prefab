@@ -626,7 +626,7 @@ GameObject:
   - component: {fileID: 4888505543758311912}
   - component: {fileID: 8454650644375189566}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: Enemy 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -640,7 +640,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5885302324912170706}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.07, y: -1.71, z: 0}
+  m_LocalPosition: {x: -1.53, y: 1.02, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 101728881951494270}
@@ -660,9 +660,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5b4582815667bb42a8ac17151303cd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unitName: Enemy 1
+  unitName: Enemy 2
   level: 10
-  attacks: 140000000f0000000a000000
+  attacks: 0a0000000f00000014000000
   attack1: attack 1
   attack2: attack 2
   attack3: attack 3
