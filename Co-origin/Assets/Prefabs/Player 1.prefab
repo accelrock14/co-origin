@@ -370,12 +370,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5b4582815667bb42a8ac17151303cd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unitName: Player 2
+  unitName: zoro
   level: 15
   attacks: 0a0000000f00000014000000
-  attack1: attack 1
-  attack2: attack 2
-  attack3: attack 3
+  attack1: onigiri
+  attack2: gum gum
+  attack3: rasengan
   maxHealth: 100
   currentHealth: 90
 --- !u!114 &11329129044828943

@@ -660,14 +660,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5b4582815667bb42a8ac17151303cd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unitName: Enemy 3
+  unitName: denji
   level: 10
   attacks: 0f0000000a00000014000000
   attack1: attack 1
   attack2: attack 2
   attack3: attack 3
-  maxHealth: 1
-  currentHealth: 1
+  maxHealth: 100
+  currentHealth: 100
 --- !u!114 &8454650644375189566
 MonoBehaviour:
   m_ObjectHideFlags: 0

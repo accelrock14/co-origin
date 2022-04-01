@@ -22,9 +22,6 @@ public class EnemyAI : MonoBehaviour
 
     BattleHUD targetHUD;
 
-    bool isLowHealth = false;
-    bool isWeek;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -56,49 +53,41 @@ public class EnemyAI : MonoBehaviour
             playerUnit = playerGO.GetComponent<Unit>();
             if (playerUnit.currentHealth <= 25)
             {
-                isLowHealth = true;
+                targetGO = playerGO;
+                targetUnit = playerUnit;
+                targetHUD = playerGO.GetComponent<BattleHUD>();
+                SelectBattleStation(enemyUnit.attacks[Random.Range(0, 1)]);
+                return;
+            }
+        }
+        foreach (Transform prefab in enemyBattleStation)
+        {
+            playerGO = prefab.gameObject;
+            ChosenEnemy = playerGO.GetComponent<Unit>();
+            if (ChosenEnemy.currentHealth <= 25)
+            {
+                targetGO = playerGO;
+                targetUnit = ChosenEnemy;
+                targetHUD = playerGO.GetComponent<BattleHUD>();
+                SelectBattleStation(enemyUnit.attacks[2]);
+                return;
+            }
+        }
+        int target = Random.Range(0, playerBattleStation.childCount - 1);
+        int i = 0;
+        foreach (Transform prefab in playerBattleStation)
+        {
+            playerGO = prefab.gameObject;
+            playerUnit = playerGO.GetComponent<Unit>();
+            if (i == target)
+            {
                 targetGO = playerGO;
                 targetUnit = playerUnit;
                 targetHUD = playerGO.GetComponent<BattleHUD>();
             }
+            i++;
         }
-        if (isLowHealth)
-            SelectBattleStation(enemyUnit.attacks[Random.Range(0,1)]);
-        else
-        {
-            foreach(Transform prefab in enemyBattleStation)
-            {
-                enemyGO = prefab.gameObject;
-                ChosenEnemy = enemyGO.GetComponent<Unit>();
-                if (ChosenEnemy.currentHealth <= 25)
-                {
-                    isWeek = true;
-                    targetGO = enemyGO;
-                    targetUnit = ChosenEnemy;
-                    targetHUD = enemyGO.GetComponent<BattleHUD>();
-                }
-            }
-            if (isWeek)
-                SelectBattleStation(enemyUnit.attacks[2]);
-            else
-            {
-                int target = Random.Range(0, playerBattleStation.childCount - 1);
-                int i = 0;
-                foreach (Transform prefab in playerBattleStation)
-                {
-                    playerGO = prefab.gameObject;
-                    playerUnit = playerGO.GetComponent<Unit>();
-                    if (i == target)
-                    {
-                        targetGO = playerGO;
-                        targetUnit = playerUnit;
-                        targetHUD = playerGO.GetComponent<BattleHUD>();
-                    }
-                    i++;
-                }
-                SelectBattleStation(enemyUnit.attacks[Random.Range(0, 1)]);
-            }
-        }
+        SelectBattleStation(enemyUnit.attacks[Random.Range(0, 1)]);
     }
     void SelectBattleStation(int damage)
     {
@@ -114,9 +103,12 @@ public class EnemyAI : MonoBehaviour
             Destroy(targetGO);
             battleSystemScript.SelectPlayer(battleSystemScript.selectedPlayer);
         }
-        if (playerBattleStation.childCount - 1 <= 0)
+        if (isDead && playerBattleStation.childCount - 1 <= 0)
         {
-            battleSystemScript.state = BattleState.LOST;
+            if (selectedBattleStation == playerBattleStation)
+                battleSystemScript.state = BattleState.LOST;
+            else
+                battleSystemScript.state = BattleState.WON;
             battleSystemScript.EndBattle();
         }
         else

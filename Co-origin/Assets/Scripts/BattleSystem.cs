@@ -152,7 +152,7 @@ public class BattleSystem : MonoBehaviour
     {
         state = BattleState.ENEMYTURN;
         SelectEnemy(selectedEnemy,selectedBattleStation);
-        bool isDead = enemyUnit.TakeDamage(playerUnit.attack3[attackNumber]);
+        bool isDead = enemyUnit.TakeDamage(playerUnit.attacks[attackNumber]);
         enemyHUD.setHP(enemyUnit.currentHealth);
         dialogText.text = "attack successful";
 
@@ -168,9 +168,12 @@ public class BattleSystem : MonoBehaviour
             SelectEnemy(selectedEnemy, selectedBattleStation);
         }
 
-        if (enemyBattleStation.childCount - 1 <= 0)
+        if (isDead && enemyBattleStation.childCount - 1 <= 0)
         {
-            state = BattleState.WON;
+            if (selectedBattleStation == playerBattleStation)
+                state = BattleState.LOST;
+            else
+                state = BattleState.WON;
             EndBattle();
         }
         else
