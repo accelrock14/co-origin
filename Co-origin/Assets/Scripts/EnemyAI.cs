@@ -31,7 +31,8 @@ public class EnemyAI : MonoBehaviour
     }
     public void SelectEnemy()
     {
-        int enemy = Random.Range(0, enemyBattleStation.childCount - 1);
+        battleSystemScript.SelectPlayer(battleSystemScript.selectedPlayer);
+        int enemy = Random.Range(0, enemyBattleStation.childCount);
         int i = 0;
         foreach (Transform prefab in enemyBattleStation)
         {
@@ -73,7 +74,7 @@ public class EnemyAI : MonoBehaviour
                 return;
             }
         }
-        int target = Random.Range(0, playerBattleStation.childCount - 1);
+        int target = Random.Range(0, playerBattleStation.childCount);
         int i = 0;
         foreach (Transform prefab in playerBattleStation)
         {
@@ -101,6 +102,7 @@ public class EnemyAI : MonoBehaviour
         if (isDead)
         {
             Destroy(targetGO);
+            battleSystemScript.selectedPlayer += 3;
             battleSystemScript.SelectPlayer(battleSystemScript.selectedPlayer);
         }
         if (isDead && playerBattleStation.childCount - 1 <= 0)

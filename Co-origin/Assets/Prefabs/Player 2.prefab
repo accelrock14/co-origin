@@ -25,8 +25,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 962323689261351416}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.85, z: 0}
-  m_LocalScale: {x: 21.144474, y: 21.144474, z: 21.144474}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 3.281973, y: 3.281973, z: 3.281973}
   m_Children: []
   m_Father: {fileID: 6597511845360145366}
   m_RootOrder: 0
@@ -70,8 +70,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 6bc3c2e56739fb74fae9cc621b2a8ce8, type: 3}
+  m_SortingOrder: -3
+  m_Sprite: {fileID: 21300000, guid: b8607a1481406724abf4e111c73fa968, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -92,7 +92,7 @@ GameObject:
   m_Component:
   - component: {fileID: 521373728053903979}
   - component: {fileID: 6078630711634526297}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Health (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -182,7 +182,7 @@ GameObject:
   - component: {fileID: 6661690960992066874}
   - component: {fileID: 4736266571237258301}
   - component: {fileID: 627600273646491198}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -257,7 +257,7 @@ GameObject:
   - component: {fileID: 3100442258168815961}
   - component: {fileID: 4791235597039159818}
   - component: {fileID: 7565352314689137271}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: PlayerHUD
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -350,7 +350,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5563916889363339255}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.09, y: 0.69, z: 0}
+  m_LocalPosition: {x: 1.06, y: 2.57, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6512586971253367521}
@@ -404,7 +404,7 @@ GameObject:
   - component: {fileID: 5257777927851135506}
   - component: {fileID: 8564727501828060376}
   - component: {fileID: 862207078495984619}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: lvl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -484,7 +484,7 @@ GameObject:
   - component: {fileID: 6136732381526910027}
   - component: {fileID: 8456442383474121766}
   - component: {fileID: 3407996061721306562}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -508,7 +508,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0.1, y: 3.24}
+  m_AnchoredPosition: {x: 2.8, y: 1.76}
   m_SizeDelta: {x: 832.5, y: 341.25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &6136732381526910027
@@ -581,7 +581,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1348018951826044018}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -619,7 +619,7 @@ GameObject:
   - component: {fileID: 528440423765687054}
   - component: {fileID: 4574717417079077382}
   - component: {fileID: 7790493575332886759}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Name
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -698,7 +698,7 @@ GameObject:
   - component: {fileID: 2490875468929155401}
   - component: {fileID: 2853419548276329123}
   - component: {fileID: 2478075881941574254}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}

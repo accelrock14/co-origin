@@ -202,10 +202,11 @@ public class BattleSystem : MonoBehaviour
     void SelectEnemy(int target, Transform battlestation)
     {
         int i = 0;
-        if (target >= selectedBattleStation.childCount - 1)
-            target = selectedBattleStation.childCount - 1;
+        
         foreach (Transform enemy in battlestation)
         {
+            if (target >= selectedBattleStation.childCount - 1)
+                target = selectedBattleStation.childCount - 1;
             if (i == target)
             {
                 enemyGO = enemy.gameObject;
@@ -221,23 +222,23 @@ public class BattleSystem : MonoBehaviour
     public void SelectPlayer(int target)
     {
         int i = 0;
-        if (target >= playerBattleStation.childCount - 1)
-            target = playerBattleStation.childCount - 1;
+        
         foreach (Transform player in playerBattleStation)
         {
+            if (target >= playerBattleStation.childCount - 1)
+                target = playerBattleStation.childCount - 1;
             if (i == target)
             {
                 playerGO = player.gameObject;
                 playerUnit = playerGO.GetComponent<Unit>();
                 playerHUD = playerGO.GetComponent<BattleHUD>();
                 playerHUD.setHUD(playerUnit);
-                if(state == BattleState.PLAYERTURN)
+                playerSelector.transform.position = player.position;
+                if (state == BattleState.PLAYERTURN)
                 {
                     attack1.text = "1. " + playerUnit.attack1;
                     attack2.text = "2. " + playerUnit.attack2;
                     attack3.text = "3. " + playerUnit.attack3;
-
-                    playerSelector.transform.position = player.position;
                 }
             }
             i++;
